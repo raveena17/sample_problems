@@ -1,0 +1,10 @@
+{% extends "cvr/cvr.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <h1>CVR Report {{ action }}</h1>
+    <form method="POST" class="cvrForm">{% csrf_token %}
+        {{ form.as_table }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
